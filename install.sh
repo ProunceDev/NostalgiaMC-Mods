@@ -4,10 +4,10 @@
 
 set -e
 
-FORGE_VERSION-"1.20.1-47.2.0"
-INSTALLER-"forge-${FORGE_VERSION}-installer.jar"
-FORGE_JAR-"forge-${FORGE_VERSION}-server.jar"
-SERVER_DIR-"$HOME/forge-1.20.1"
+FORGE_VERSION="1.20.1-47.2.0"
+INSTALLER="forge-${FORGE_VERSION}-installer.jar"
+FORGE_JAR="forge-${FORGE_VERSION}-server.jar"
+SERVER_DIR="$HOME/forge-1.20.1"
 
 echo "--- Updating system and installing Java 17 ---"
 sudo apt update
@@ -24,7 +24,7 @@ echo "--- Running Forge installer (server mode) ---"
 java -jar "$INSTALLER" --installServer
 
 echo "--- Accepting EULA ---"
-echo "eula-true" > eula.txt
+echo "eula=true" > eula.txt
 
 echo "--- Creating start.sh script ---"
 cat > start.sh <<EOL
